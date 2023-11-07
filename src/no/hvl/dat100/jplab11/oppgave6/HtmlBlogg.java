@@ -18,7 +18,23 @@ public class HtmlBlogg extends Blogg {
 	
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
-		
+		String tekst = "";
+		tekst += "<html>\n";
+		tekst += "<head>\n<title>DAT100blogg</title\n</head>";
+		tekst += "<body>\n";
+		for (int i = 0; i<this.getAntall();i++){
+			tekst += this.getSamling()[i].toHTML()+"\n";
+		}
+		tekst += "</body>\n";
+		tekst += "</html>";
+
+
+		return tekst;
+
+
+		/*for (int i = 0; i<this.getAntall();i++){
+			tekst += "<h2>"+this.getSamling()[i].getBruker()+" @"+this.getSamling()[i].getDato()+"["+this.getSamling()[i].getLikes()+"]<h2>";
+			tekst += "<p>"+this.getSamling()[i].getTekst()+"<p>";
+		} */
 	}
 }
